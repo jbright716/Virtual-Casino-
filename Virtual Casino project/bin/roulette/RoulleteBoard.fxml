@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="roulette.Roulette">
+   <children>
+      <Pane prefHeight="500.0" prefWidth="1000.0" style="-fx-background-color: #52595d;">
+         <children>
+            <HBox prefHeight="355.0" prefWidth="1000.0">
+               <children>
+                  <BorderPane fx:id="board" prefHeight="250.0" prefWidth="425.0" style="-fx-background-color: #31906E;" HBox.hgrow="ALWAYS">
+                     <center>
+                        <GridPane fx:id="numGP" alignment="CENTER" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="850.0" BorderPane.alignment="CENTER">
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                           </rowConstraints>
+                           <columnConstraints>
+                              <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="200.0" />
+                           </children>
+                        </GridPane>
+                     </center>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <bottom>
+                        <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                           <children>
+                              <GridPane fx:id="topAlts" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1000.0">
+                                <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </GridPane>
+                              <GridPane fx:id="botAlts" gridLinesVisible="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1000.0" VBox.vgrow="ALWAYS">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints halignment="CENTER" hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="ALWAYS" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+                     </bottom>
+                  </BorderPane>
+               </children>
+            </HBox>
+            <ScrollPane layoutX="301.0" layoutY="355.0" pannable="true" prefHeight="110.0" prefWidth="400.0" style="-fx-background-color: null; -fx-border-width: 5; -fx-border-color: black;" vbarPolicy="NEVER">
+               <content>
+                  <HBox alignment="CENTER" prefHeight="100.0" spacing="10.0" style="-fx-background-color: #31906E #31906E #31906E #31906E;">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <children>
+                          <ToggleButton fx:id="chipOne" onAction="#chipClicked" style="-fx-background-color: null;">
+                           <graphic>
+                              <ImageView fx:id="chipOneImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="chipSelect" />
+                           </toggleGroup>
+                          </ToggleButton>
+                          <ToggleButton fx:id="chipFive" onAction="#chipClicked" selected="true" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                           <graphic>
+                              <ImageView fx:id="chipFiveImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                          </ToggleButton>
+                          <ToggleButton fx:id="chipTen" onAction="#chipClicked" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                           <graphic>
+                              <ImageView fx:id="chipTenImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                          </ToggleButton>
+                        <ToggleButton fx:id="chipTwentyFive" mnemonicParsing="false" onAction="#chipClicked" style="-fx-background-color: null;">
+                           <graphic>
+                              <ImageView fx:id="chipTwentyFiveImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="chipFifty" mnemonicParsing="false" onAction="#chipClicked" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                           <graphic>
+                              <ImageView fx:id="chipFiftyImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </ToggleButton>
+                        <ToggleButton fx:id="chipHundred" mnemonicParsing="false" onAction="#chipClicked" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                           <graphic>
+                              <ImageView fx:id="chipHundredImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                           </graphic>
+                        </ToggleButton>
+                     </children>
+                  </HBox>
+               </content>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </ScrollPane>
+            <Pane layoutY="355.0" prefHeight="145.0" prefWidth="305.0" style="-fx-background-color: null; -fx-border-color: black; -fx-border-width: 5;">
+               <children>
+                  <Label layoutX="10.0" layoutY="60.0" prefHeight="18.0" prefWidth="150.0" text="Min Bet: 5.00" wrapText="true">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="150.0" layoutY="60.0" prefHeight="18.0" prefWidth="150.0" text="Max Bet: 500" wrapText="true">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="25.0" layoutY="20.0" text="TOTAL BET:" textFill="#bdaa0a">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totalBet" layoutX="145.0" layoutY="20.0" prefHeight="25.0" prefWidth="130.0" text="0.00" textFill="#bdaa0a">
+                     <font>
+                        <Font name="Arial" size="19.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="85.0" layoutY="95.0" text="WIN:" textFill="#bdaa0a">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Win" layoutX="145.0" layoutY="95.0" prefHeight="25.0" prefWidth="130.0" text="0.00" textFill="#bdaa0a">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane layoutX="696.0" layoutY="355.0" prefHeight="145.0" prefWidth="305.0" style="-fx-background-color: null; -fx-border-width: 5; -fx-border-color: black;">
+               <children>
+                  <Button layoutX="150.0" layoutY="90.0" mnemonicParsing="false" onAction="#clearBets" style="-fx-background-color: #2C2C2C; -fx-border-color: #BDAA0A; -fx-border-width: 5; -fx-font-weight: bold; -fx-text-fill: #BDAA0A #BDAA0A;" text="Clear" />
+                  <Button layoutX="46.0" layoutY="90.0" mnemonicParsing="false" onAction="#undoBet" style="-fx-background-color: #2C2C2C; -fx-border-color: #BDAA0A; -fx-border-width: 5; -fx-font-weight: bold; -fx-text-fill: #BDAA0A #BDAA0A;" text="Undo Bet" />
+                  <ImageView fx:id="exit" fitHeight="50.0" fitWidth="50.0" layoutX="225.0" layoutY="85.0" onMouseClicked="#exit" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="30.0" layoutY="10.0" mnemonicParsing="false" onAction="#spin" prefHeight="66.0" prefWidth="240.0" style="-fx-background-color: #2C2C2C; -fx-border-color: #BDAA0A; -fx-border-width: 5;" text="Spin" textFill="#bdaa0a">
+                     <font>
+                        <Font name="Arial Bold" size="30.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane layoutX="300.0" layoutY="460.0" prefHeight="40.0" prefWidth="400.0" style="-fx-background-color: null; -fx-border-color: black; -fx-border-width: 5;">
+               <children>
+                  <Label layoutX="100.0" layoutY="10.0" text="BALANCE:" textFill="#bdaa0a">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="balance" layoutX="200.0" layoutY="10.0" prefWidth="130.0" textFill="#bdaa0a">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</StackPane>

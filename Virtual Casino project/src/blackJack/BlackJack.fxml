@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" style="-fx-border-color: black; -fx-border-width: 5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="blackJack.blackJack">
+   <children>
+      <ImageView fitHeight="500.0" fitWidth="1000.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../Documents/Bj.png" />
+         </image>
+      </ImageView>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="1000.0" style="-fx-background-color: #273227#273227;" translateY="235.0">
+         <children>
+            <HBox alignment="CENTER" layoutX="60.0" layoutY="2.5" prefHeight="25.0" spacing="10.0">
+               <children>
+                  <Label text="Balance" textFill="#bdaa0a">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="currentBalance" text="\$" textFill="#bdaa0a">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="750.0" layoutY="2.5" prefHeight="25.0" spacing="10.0">
+               <children>
+                  <Label text="Total Bet" textFill="#bdaa0a">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="totBet" text="\$" textFill="#bdaa0a">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="400.0" layoutY="2.5" prefHeight="25.0" spacing="10.0">
+               <children>
+                  <Label text="Win" textFill="#bdaa0a">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="win" text="\$" textFill="#bdaa0a">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+      <Pane fx:id="gameUI" prefHeight="200.0" prefWidth="200.0" visible="false">
+         <children>
+            <Button alignment="CENTER" layoutX="10.0" layoutY="275.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#surrender" prefWidth="125.0" style="-fx-background-color: null; -fx-border-color: #c7b71a; -fx-border-width: 10; -fx-border-radius: 20;" text="Surrender" textFill="#c7b71a">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="875.0" layoutY="210.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#hit" prefWidth="100.0" style="-fx-background-color: null; -fx-border-color: #c7b71a; -fx-border-width: 10; -fx-border-radius: 20;" text="Hit" textFill="#c7b71a">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="875.0" layoutY="275.0" maxHeight="-Infinity" mnemonicParsing="false" onAction="#stand" prefWidth="100.0" style="-fx-background-color: null; -fx-border-color: #c7b71a; -fx-border-width: 10; -fx-border-radius: 20;" text="Stand" textFill="#c7b71a">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button alignment="CENTER" layoutX="10.0" layoutY="210.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#doubleDown" prefWidth="125.0" style="-fx-background-color: null; -fx-border-color: #c7b71a; -fx-border-width: 10; -fx-border-radius: 20;" text="Double" textFill="#c7b71a">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <HBox fx:id="dealerHbox" alignment="CENTER" layoutY="45.0" prefHeight="125.0" prefWidth="1000.0" spacing="25.0" />
+            <HBox fx:id="playerHbox" alignment="CENTER" layoutY="335.0" prefHeight="125.0" prefWidth="1000.0" spacing="25.0" />
+            <Label fx:id="playerCards" alignment="TOP_CENTER" layoutX="150.0" layoutY="285.0" text="Your hand:" textFill="#c7b71a">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+            <Circle centerX="205.0" centerY="250.0" fill="#b6d5f2" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="totalP" alignment="CENTER" layoutX="185.0" layoutY="225.0" text="17">
+               <font>
+                  <Font name="System Bold" size="43.0" />
+               </font>
+            </Label>
+            <Circle centerX="775.0" centerY="250.0" fill="#b6d5f2" radius="40.0" stroke="BLACK" strokeType="INSIDE" />
+            <Label fx:id="totalD" layoutX="755.0" layoutY="225.0" text="17">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+            <Label fx:id="dealerCards" alignment="TOP_CENTER" layoutX="700.0" layoutY="285.0" text="Dealer hand:" textFill="#c7b71a">
+           	 <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="promptPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: #273227#273227 #273227#273227; -fx-border-width: 5; -fx-border-color: white; -fx-border-radius: 2;" translateY="-25.0" visible="false">
+         <children>
+            <Button fx:id="no" alignment="CENTER" layoutX="350.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#cancelPrompt" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: null; -fx-border-color: #bdaa0a#bdaa0a; -fx-border-width: 10; -fx-border-radius: 20;" text="No" textFill="#bdaa0a">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <Button fx:id="yes" alignment="CENTER" layoutX="100.0" layoutY="110.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#confirmPrompt" prefHeight="75.0" prefWidth="150.0" style="-fx-background-color: null; -fx-border-color: #bdaa0a#bdaa0a; -fx-border-width: 10; -fx-border-radius: 20;" text="Yes" textFill="#bdaa0a">
+               <font>
+                  <Font size="31.0" />
+               </font>
+            </Button>
+            <Label fx:id="promptLabel" alignment="CENTER" prefHeight="100.0" prefWidth="600.0" textFill="#c7b71a" wrapText="true">
+               <font>
+                  <Font name="Arial" size="31.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="winOrLose" alignment="CENTER" contentDisplay="CENTER" prefHeight="100.0" prefWidth="400.0" textAlignment="CENTER" textFill="#c7b71a" translateY="-100.0" wrapText="true">
+         <font>
+            <Font name="Arial" size="45.0" />
+         </font>
+      </Label>
+      <Pane fx:id="betView" prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <ImageView fx:id="exit" fitHeight="50.0" fitWidth="50.0" layoutX="925.0" layoutY="15.0" onMouseClicked="#exitGame" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="newGame" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="725.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#startHand" prefHeight="60.0" prefWidth="125.0" style="-fx-background-color: null; -fx-border-color: #bdaa0a#bdaa0a; -fx-border-width: 10; -fx-border-radius: 20;" text="Deal" textAlignment="CENTER" textFill="#bdaa0a">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+            <Button alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="860.0" layoutY="375.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#undoBet" prefHeight="60.0" prefWidth="125.0" style="-fx-background-color: null; -fx-border-color: #bdaa0a#bdaa0a; -fx-border-width: 10; -fx-border-radius: 20;" text="Undo" textAlignment="CENTER" textFill="#bdaa0a">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Button>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="350.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="100.0" spacing="10.0" style="-fx-background-color: null;">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <children>
+                  <ToggleButton fx:id="chipOne" onAction="#chipClicked" style="-fx-background-color: null;">
+                     <graphic>
+                        <ImageView fx:id="chipOneImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="chipSelect" />
+                     </toggleGroup>
+                  </ToggleButton>
+                  <ToggleButton fx:id="chipFive" onAction="#chipClicked" selected="true" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                     <graphic>
+                        <ImageView fx:id="chipFiveImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="chipTen" onAction="#chipClicked" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                     <graphic>
+                        <ImageView fx:id="chipTenImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="chipTwentyFive" mnemonicParsing="false" onAction="#chipClicked" style="-fx-background-color: null;">
+                     <graphic>
+                        <ImageView fx:id="chipTwentyFiveImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="chipFifty" mnemonicParsing="false" onAction="#chipClicked" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                     <graphic>
+                        <ImageView fx:id="chipFiftyImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </ToggleButton>
+                  <ToggleButton fx:id="chipHundred" mnemonicParsing="false" onAction="#chipClicked" style="-fx-background-color: null;" toggleGroup="$chipSelect">
+                     <graphic>
+                        <ImageView fx:id="chipHundredImg" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </ToggleButton>
+               </children>
+            </HBox>
+         </children>
+      </Pane>
+   </children>
+</StackPane>
