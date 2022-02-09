@@ -72,8 +72,8 @@ public class blackJack  implements Initializable{
 		
 		@FXML
 		private Label playerCards;
-		
-		
+		@FXML
+		private Image bg = new Image("blackJack/Assets/Bj.png");
 		@FXML
 		private Label dealerCards;
 		
@@ -145,7 +145,9 @@ public class blackJack  implements Initializable{
 
 	    @FXML
 	    private ImageView chipTwentyFiveImg;
-		
+
+	    @FXML
+	    private ImageView backgroundImage;
 		// Method to start a new hand of Black Jack
 		public void startHand() {
 			
@@ -531,6 +533,9 @@ public class blackJack  implements Initializable{
 		@Override
 		public void initialize(URL arg0, ResourceBundle arg1) {
 			// TODO Auto-generated method stub
+			
+			// set background image
+			backgroundImage.setImage(bg);
 			// set the images of the chips
 	    	chipOneImg.setImage(new Image("roulette/Assets/PokerChip1.png"));
 	    	chipFiveImg.setImage(new Image("roulette/Assets/PokerChip5.png"));
