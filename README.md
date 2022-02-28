@@ -1,6 +1,5 @@
 # Virtual-Casino
-An Application meant to assist individuals in the development of gambling stategies. For use within actual like 
-
+An Application developed to assist individuals optimize gambling stategies.
 
 # UML
 
